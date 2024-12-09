@@ -35,6 +35,7 @@ RUN python -m nltk.downloader vader_lexicon punkt opinion_lexicon stopwords corp
 RUN python -m spacy download en_core_web_sm
 RUN python -m nltk.downloader punkt
 
+RUN mkdir /app/nltk_data && python -m nltk.downloader -d /app/nltk_data punkt
 
 # Set working directory
 WORKDIR /opt/airflow
