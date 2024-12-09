@@ -1,5 +1,6 @@
 import re
 import nltk
+nltk.data.path.append('/app/nltk_data')
 from nltk.sentiment import SentimentIntensityAnalyzer
 from src.config.mlflow_config import *
 collector = MetricsCollector()
@@ -20,10 +21,15 @@ try:
 except LookupError:
     nltk.download('opinion_lexicon')
 
+try:
+    nltk.data.find('tokenizers/punkt')
+    print("Punkt tokenizer found.")
+except LookupError:
+    print("Punkt tokenizer missing. Downloading...")
+    nltk.download('punkt', download_dir='/app/nltk_data')
 
 # Initialize sentiment analyzer
 sia = SentimentIntensityAnalyzer()
-
 
 
 # Mapping of gendered terms to neutral terms
