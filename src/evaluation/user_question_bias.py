@@ -1,7 +1,7 @@
 import re
 import nltk
 from nltk.sentiment import SentimentIntensityAnalyzer
-from config.mlflow_config import *
+from src.config.mlflow_config import *
 collector = MetricsCollector()
 
 # Download required NLTK resources if not already available

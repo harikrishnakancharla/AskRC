@@ -6,14 +6,14 @@ import streamlit as st
 from azure.search.documents import SearchClient
 from azure.core.credentials import AzureKeyCredential
 from dotenv import load_dotenv
-from config.mlflow_config import MetricsCollector
-from model.retrive_azure_index import search_azure_index
-from model.system_prompt import create_system_prompt
-from model.get_model_response import get_openai_response
-from evaluation.user_question_bias import check_bias_in_user_question
-from evaluation.model_response_bias import check_bias_in_model_response
-from evaluation.answer_validation import key_concept_match 
-from model.alerts import send_slack_alert
+from src.config.mlflow_config import MetricsCollector
+from src.model.retrive_azure_index import search_azure_index
+from src.model.system_prompt import create_system_prompt
+from src.model.get_model_response import get_openai_response
+from src.evaluation.user_question_bias import check_bias_in_user_question
+from src.evaluation.model_response_bias import check_bias_in_model_response
+from src.evaluation.answer_validation import key_concept_match 
+from src.model.alerts import send_slack_alert
 # Load environment variables from .env file
 load_dotenv()
 collector = MetricsCollector()
