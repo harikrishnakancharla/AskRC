@@ -33,6 +33,8 @@ RUN pip install --no-cache-dir -r /requirements.txt
 # Install additional resources (e.g., NLTK and SpaCy models)
 RUN python -m nltk.downloader vader_lexicon punkt opinion_lexicon stopwords corpora/stopwords
 RUN python -m spacy download en_core_web_sm
+RUN python -m nltk.downloader punkt
+
 
 # Set working directory
 WORKDIR /opt/airflow
