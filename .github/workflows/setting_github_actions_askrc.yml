@@ -70,7 +70,7 @@ jobs:
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'ask-rc'
+          app-name: 'askrc'
           slot-name: 'Production'
 
       - name: Notify Slack on Failure
