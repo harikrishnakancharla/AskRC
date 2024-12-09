@@ -69,6 +69,13 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_56CB33F6975B4AA7800A6A9FCBD224E7 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_189A74F53B9549589CF829D582325BDF }}
 
+      - name: Set Azure App Service Environment Variables
+        run: |
+          az webapp config appsettings set \
+            --resource-group "<Your_Resource_Group>" \
+            --name "askrc1" \
+            --settings AZURE_SEARCH_KEY=${{ secrets.AZURE_SEARCH_KEY }}
+
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
