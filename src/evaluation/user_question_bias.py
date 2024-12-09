@@ -33,6 +33,13 @@ except LookupError:
     print("Punkt tokenizer missing. Downloading...")
     nltk.download('punkt', download_dir='/app/nltk_data')
 
+try:
+    nltk.data.find('tokenizers/punkt_tab')
+    print("Punkt tokenizer found.")
+except LookupError:
+    print("Punkt_tab tokenizer missing. Downloading...")
+    nltk.download('punkt_tab', download_dir='/app/nltk_data')
+
 # Initialize sentiment analyzer
 sia = SentimentIntensityAnalyzer()
 
