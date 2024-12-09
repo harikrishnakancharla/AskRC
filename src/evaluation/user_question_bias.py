@@ -17,6 +17,11 @@ except LookupError:
     nltk.download('punkt')
 
 try:
+    nltk.data.find('tokenizers/punkt_tab')
+except LookupError:
+    nltk.download('punkt_tab')
+
+try:
     nltk.data.find('corpora/opinion_lexicon')
 except LookupError:
     nltk.download('opinion_lexicon')
