@@ -91,7 +91,7 @@ The repository will follow this structure:
 ## 5. Pipeline Components
 
 ### Architecture
-
+![Project Screenshot](RC Documentation 5.gif)
 
 ### 5.1 Data Acquisition
 The Data Acquisition component is designed to dynamically fetch data from specific sections of a website based on the current week. This is achieved through the `scraper.py` and `get_all_url.py` modules, which handle URL scraping and link gathering, respectively.
