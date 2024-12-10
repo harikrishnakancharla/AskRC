@@ -25,6 +25,7 @@
    - [Tracking and Logging](#62-tracking-and-logging)
 7. [Anomaly Detection and Alerts](#7-anomaly-detection-and-alerts)
 8. [Bias Detection](#8-bias-detection)
+9. [Cloud Deployment and User Interface](#9-cloud-deployment-and-user-interface)
 
 ---
 
@@ -167,3 +168,16 @@ Although bias detection is not mandatory due to the standardized nature of the s
 1. **Sentiment Analysis**: Verifies neutral tone.
 2. **Data Slicing by Sentiment**: Allows observation of any unintentional tone patterns.
 3. **Topic Modeling and Keyword Frequency Analysis**: Ensures chatbot responses are representative of the full breadth of available information.
+
+## 9. Cloud Deployment and User Interface
+
+The project is designed for cloud deployment using Azure as the cloud provider, leveraging Azure Web App for hosting the model, application, and user interface. The deployment ensures robust, scalable, and secure delivery of services over the internet. 
+
+The RAG chatbot backend is hosted on Azure Web App, utilizing its managed infrastructure to expose RESTful endpoints for seamless interaction with the Retrieval-Augmented Generation (RAG) model. The user interface, created using Streamlit, provides an intuitive platform for users to interact with the chatbot and visualize responses.
+
+The web version of the application is deployed at [https://rakshith2605.github.io/askrc_web/](https://rakshith2605.github.io/askrc_web/). This includes an option to connect to the ASKRC bot for real-time interactions.
+
+The solution integrates with Azure Blob Storage, where preprocessed data files are securely stored, and Azure Cognitive Search, which indexes these files to enable efficient and precise information retrieval during chatbot interactions. This architecture ensures high performance, scalability, and ease of management for both the backend services and the user interface.
+
+
+
