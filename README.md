@@ -179,5 +179,5 @@ The web version of the application is deployed at [https://rakshith2605.github.i
 
 The solution integrates with Azure Blob Storage, where preprocessed data files are securely stored, and Azure Cognitive Search, which indexes these files to enable efficient and precise information retrieval during chatbot interactions. This architecture ensures high performance, scalability, and ease of management for both the backend services and the user interface.
 
-
+![Alt text](assets/UI.png)
 
