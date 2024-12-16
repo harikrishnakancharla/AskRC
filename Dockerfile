@@ -31,8 +31,18 @@ COPY requirements.txt /requirements.txt
 RUN pip install --no-cache-dir -r /requirements.txt
 
 # Install additional resources (e.g., NLTK and SpaCy models)
-RUN python -m nltk.downloader vader_lexicon punkt opinion_lexicon
+RUN python -m nltk.downloader vader_lexicon punkt opinion_lexicon stopwords corpora/stopwords punkt_tab
 RUN python -m spacy download en_core_web_sm
+RUN python -m nltk.downloader punkt
+
+# Create the directory for NLTK data
+RUN mkdir -p /app/nltk_data
+
+# Pre-download required NLTK resources
+RUN python -m nltk.downloader -d /app/nltk_data punkt
+RUN python -m nltk.downloader -d /app/nltk_data punkt_tab
+RUN python -m nltk.downloader -d /app/nltk_data vader_lexicon
+RUN python -m nltk.downloader -d /app/nltk_data opinion_lexicon
 
 # Set working directory
 WORKDIR /opt/airflow

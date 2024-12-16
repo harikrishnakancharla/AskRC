@@ -2,7 +2,7 @@ import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk import download
-from ..config.mlflow_config import *
+from src.config.mlflow_config import *
 collector = MetricsCollector()
 
 # Ensure necessary NLTK resources are available

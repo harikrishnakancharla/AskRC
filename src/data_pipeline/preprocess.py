@@ -16,7 +16,17 @@ except (ImportError, ValueError):
         return f"mock_url_for_{file_path}"
 
 # Download stopwords if not already done
-nltk.download('stopwords', quiet=True)
+try:
+    from nltk.corpus import stopwords
+except LookupError:
+    print("Downloading 'stopwords' resource...")
+    nltk.download('stopwords')
+
+# stop_words = set(stopwords.words('english'))
+# try:
+#     nltk.data.find('corpora/stopwords')
+# except LookupError:
+#     nltk.download('stopwords')
 
 # Define maximum term size (in bytes)
 MAX_TERM_SIZE = 20000

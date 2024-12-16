@@ -39,7 +39,7 @@ def get_openai_response(prompt, retries=5, delay=10):
             
             # Return the AI-generated response
             return response['choices'][0]['message']['content'].strip()
-
+        
         except RateLimitError:
             print(f"Rate limit exceeded. Retrying in {delay} seconds (Attempt {attempt} of {retries})...")
         
